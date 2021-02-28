@@ -3,6 +3,15 @@ import { Text, View, TouchableOpacity, TextInput, Image, StyleSheet } from 'reac
 import { Header } from 'react-native-elements';
 
 export default class WriteStoryScreen extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      Author: '',
+      StoryTitle: '',
+      Story: '',
+    }
+
+  }
     render(){
         return(
             <View style={styles.container}>
@@ -11,14 +20,17 @@ export default class WriteStoryScreen extends React.Component {
                 <TextInput
                     style={styles.inputBox}
                     placeholder="Title"
+                    value={this.StoryTitle}
                 />
                 <TextInput
                     style={styles.inputBox}
                     placeholder="Author"
+                    value={this.Author}
                 />
                 <TextInput
                     style={styles.inputBoxBig}
                     placeholder="Write the Story"
+                    value={this.Story}
                     multiline={true}
                 />
                 <TouchableOpacity 
